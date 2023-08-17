@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'}
+
+android {
+    namespace 'kityukha.kotlin.cryptoapp'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "kityukha.kotlin.cryptoapp"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
+    // Because RxAndroid releases are few and far between, it is recommended you also
+    // explicitly depend on RxJava's latest version for bug fixes and new features.
+    // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
+    implementation 'io.reactivex.rxjava3:rxjava:3.1.6'
+
+    implementation "io.reactivex.rxjava3:rxjava:3.1.6"
+
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.core:core-ktx:+'
+
+    // Lombok
+    compileOnly "org.projectlombok:lombok:1.18.28"
+    annotationProcessor "org.projectlombok:lombok:1.18.28"
+
+
+    def lifecycle_version = "2.6.1"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    // Annotation processor
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    def room_version = "2.5.2"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt  "androidx.room:room-compiler:$room_version"
+
+    // To use Kotlin annotation processing tool (kapt)
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // https://mvnrepository.com/artifact/com.squareup.picasso/picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+
+
+
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CryptoAPP</string>
+    <string name="symbolsTemplate">%s / %s</string>
+    <string name="lastUpdateTemplate">Последнее обновление: %s</string>
+    <string name="price_label">Цена:</string>
+    <string name="min_price_label">Минимум за день:</string>
+    <string name="max_price_label">Максимум за день:</string>
+    <string name="last_market_label">Последняя сделка</string>
+    <string name="market_label">Bitfinex</string>
+    <string name="last_updated_label">Обновлено:</string>
+    <string name="slash">/</string>
+</resources>
